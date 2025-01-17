@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>EMPLOYEE SHOW</title>
+{% endblock %}
+
+
+{% block content %}
+<div class = 'container'>
+  <table class = 'table table-striped'>
+  <thead>
+    <tr>
+        <th>EMPLOYEE ID</th>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>MARKS</th>
+        <th>CITY</th>
+        <th>STATE</th>
+    </tr>
+  </thead>
+      <tbody>
+        {% for record in objs %}
+            <tr>
+                 <td>{{record.eid}}</td>
+                 <td>{{record.fname}}</td>
+                 <td>{{record.lname}}</td>
+                 <td>{{record.marks}}</td>
+                 <td>{{record.city}}</td>
+                 <td>{{record.state}}</td>
+                 <td>
+                     <a href = "{% url 'update_url' record.id %}"><button class = 'btn btn-outline-warning btn-sm me-3'>UPDATE</button></a>
+                     <a href = "{% url 'delete_url' record.id %}"><button class = 'btn btn-outline-danger btn-sm'>DELETE</button></a>
+                 </td>
+            </tr>
+        {% endfor %}
+      </tbody>
+
+
+  </table>
+
+</div>
+{% endblock %}
