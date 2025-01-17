@@ -28,7 +28,7 @@
                  <td>{{record.city}}</td>
                  <td>{{record.state}}</td>
                  <td>
-                     <a href = "{% url 'update_url' record.id %}"><button class = 'btn btn-outline-warning btn-sm me-3'>UPDATE</button></a>
+                     <a href = "{% url 'update_url' record.id %}"><button class = 'btn btn-outline-danger btn-sm me-3'>UPDATE</button></a>
                      <a href = "{% url 'delete_url' record.id %}"><button class = 'btn btn-outline-danger btn-sm'>DELETE</button></a>
                  </td>
             </tr>
